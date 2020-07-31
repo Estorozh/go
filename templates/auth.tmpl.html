@@ -1,0 +1,32 @@
+<html>
+  {{template "header.tmpl.html"}}
+<body>
+
+  <div class="row auth">
+    <div class="col s12 m6 offset-m3 xl4 offset-xl4">
+      <form class="card">
+        <div class="title">Здравствуйте.<br>Введите ваш логин и пароль.</div>
+        <div class="card-content">
+          <div class="input-field ">
+            <i class="material-icons prefix">account_circle</i>
+            <input id="login" type="text" class="validate">
+            <label for="icon_prefix">User name</label>
+          </div>
+          <div class="input-field">
+            <i class="material-icons prefix">https</i>
+            <input id="password" type="password" class="validate">
+            <label for="password">Password</label>
+          </div>
+        </div>
+        <div class="card-action">
+          <button class="btn waves-effect waves-light deep-purple`" type="submit" name="action">Войти
+            <i class="material-icons right">send</i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  {{template "footer.tmpl.html"}}
+</body>
+</html>

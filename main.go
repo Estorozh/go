@@ -22,6 +22,10 @@ func main() {
 	router.Static("/static", "static")
 
 	router.GET("/", func(c *gin.Context) {
+		c.HTML(http.StatusOK, "auth.tmpl.html", nil)
+	})
+
+	router.GET("/work", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "index.tmpl.html", nil)
 	})
 
