@@ -1,5 +1,5 @@
 <html>
-  {{template "components/header.tmpl.html"}}
+  {{template "header.tmpl.html"}}
 <body style="background-color: #444;">
 
   <div class="row work">
@@ -7,57 +7,25 @@
       <form class="card">
         <div class="title">Заполните все поля</div>
         <div class="row card-content">
-          {{template "components/names.tmpl.html"}}
-          {{template "components/typeAnimal.tmpl.html"}}
+          {{template "names.tmpl.html"}}
+
+          {{template "typeAnimal.tmpl.html"}}
 
           <div class="row-2 col s12">
-            {{template "components/material.tmpl.html"}}
+            {{template "material.tmpl.html"}}
 
-            {{template "components/conclusion.tmpl.html"}}
+            {{template "location.tmpl.html"}}
 
-            {{template "components/macroMicro.tmpl.html"}}
+            {{template "macroMicro.tmpl.html"}}
           </div>
 
-          <div class="input-field col s12 m4">
-            <select>
-              <option value="" disabled selected>выберете...</option>
-              <option value="1">кожа</option>
-              <option value="2">п.у.</option>
-              <option value="3">мягк. ткани</option>
-              <option value="4">печень</option>
-              <option value="5">почки</option>
-              <option value="6">селезенка</option>
-              <option value="7">кости</option>
-              <option value="8">синовия??</option>              
-              <option value="9">выпеты??</option>
-              <option value="10">легкие</option>
-              <option value="11">п-ж ж-за</option>
-              <option value="12">предст. ж-за</option>
-              <option value="13">семенники??</option>
-              <option value="14">уши</option>
-              <option value="15">влагалище</option>
-              <option value="16">средоимение??</option>
-              <option value="17">мозг</option>
-              <option value="18">желчь</option>
-              <option value="19">мол. ж-за</option>
-              <option value="20">язык</option>
-              <option value="21">рот. п-ть</option>
-              <option value="22">пол. член</option>
-              <option value="23">яичники</option>
-              <option value="24">глаз</option>
-              <option value="25">к-к</option>
-              <option value="26">желудок</option>
-              <option value="27">трахея</option>
-              <option value="28">гортань</option>
-              <option value="29">сердце</option>
-              <option value="30">моча</option>
-              <option value="31">моч. пузырь</option>
-              <option value="32">кал</option>
-            </select>
-            <label>Локализация</label>
+          <div class="row-2 col s12">
+            {{template "gista.tmpl.html"}}
+
+            {{template "conclusion.tmpl.html"}}
           </div>
 
-          {{template "components/comment.tmpl.html"}}
+          {{template "comment.tmpl.html"}}
 
         </div>
         <div class="card-action" style="text-align: right;">
@@ -69,7 +37,7 @@
     </div>
   </div>
 
-  {{template "components/footer.tmpl.html"}}
+  {{template "footer.tmpl.html"}}
   <script>
     $(document).ready(function() {
       $('select').material_select();
