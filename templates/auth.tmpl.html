@@ -1,10 +1,10 @@
 <html>
-  {{template "header.tmpl.html"}}
+  {{template "components/header.tmpl.html"}}
 <body>
 
   <div class="row auth">
     <div class="col s12 m6 offset-m3 xl4 offset-xl4">
-      <form class="card">
+      <form class="card" action="/work">
         <div class="title">Здравствуйте.<br>Введите ваш логин и пароль.</div>
         <div class="card-content">
           <div class="input-field ">
@@ -19,7 +19,7 @@
           </div>
         </div>
         <div class="card-action">
-          <button class="btn waves-effect waves-light deep-purple`" type="submit" name="action">Войти
+          <button class="btn waves-effect waves-light" type="submit" name="action">Войти
             <i class="material-icons right">send</i>
           </button>
         </div>
@@ -27,6 +27,6 @@
     </div>
   </div>
 
-  {{template "footer.tmpl.html"}}
+  {{template "components/footer.tmpl.html"}}
 </body>
 </html>

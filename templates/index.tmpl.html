@@ -1,38 +1,67 @@
 <html>
-  {{template "header.tmpl.html"}}
-<body>
-  {{template "nav.tmpl.html"}}
+  {{template "components/header.tmpl.html"}}
+<body style="background-color: #444;">
 
-  <div class="row auth">
+  <div class="row work">
     <div class="col s12">
       <form class="card">
         <div class="title">Заполните все поля</div>
         <div class="row card-content">
-          <div class="input-field col s12 m4">
-            <input id="fullname" type="text" class="validate">
-            <label for="icon_prefix">ФИО владельца</label>
+          {{template "components/names.tmpl.html"}}
+          {{template "components/typeAnimal.tmpl.html"}}
+
+          <div class="row-2 col s12">
+            {{template "components/material.tmpl.html"}}
+
+            {{template "components/conclusion.tmpl.html"}}
+
+            {{template "components/macroMicro.tmpl.html"}}
           </div>
-          <div class="input-field col s12 m4">
-            <input id="animalName" type="text" class="validate">
-            <label for="icon_prefix">Кличка</label>
-          </div>
+
           <div class="input-field col s12 m4">
             <select>
-              <option value="" disabled selected>Животное</option>
-              <option value="1">Собака</option>
-              <option value="2">Кошка</option>
-              <option value="3">Хорёк</option>
-              <option value="4">Кролик</option>
-              <option value="5">Лошадь</option>
-              <option value="6">Крыса</option>
-              <option value="5">м.Свинка</option>
-              <option value="6">Ёж</option>
+              <option value="" disabled selected>выберете...</option>
+              <option value="1">кожа</option>
+              <option value="2">п.у.</option>
+              <option value="3">мягк. ткани</option>
+              <option value="4">печень</option>
+              <option value="5">почки</option>
+              <option value="6">селезенка</option>
+              <option value="7">кости</option>
+              <option value="8">синовия??</option>              
+              <option value="9">выпеты??</option>
+              <option value="10">легкие</option>
+              <option value="11">п-ж ж-за</option>
+              <option value="12">предст. ж-за</option>
+              <option value="13">семенники??</option>
+              <option value="14">уши</option>
+              <option value="15">влагалище</option>
+              <option value="16">средоимение??</option>
+              <option value="17">мозг</option>
+              <option value="18">желчь</option>
+              <option value="19">мол. ж-за</option>
+              <option value="20">язык</option>
+              <option value="21">рот. п-ть</option>
+              <option value="22">пол. член</option>
+              <option value="23">яичники</option>
+              <option value="24">глаз</option>
+              <option value="25">к-к</option>
+              <option value="26">желудок</option>
+              <option value="27">трахея</option>
+              <option value="28">гортань</option>
+              <option value="29">сердце</option>
+              <option value="30">моча</option>
+              <option value="31">моч. пузырь</option>
+              <option value="32">кал</option>
             </select>
-            <label>Materialize Select</label>
+            <label>Локализация</label>
           </div>
+
+          {{template "components/comment.tmpl.html"}}
+
         </div>
-        <div class="card-action">
-          <button class="btn waves-effect waves-light deep-purple`" type="submit" name="action">Submit
+        <div class="card-action" style="text-align: right;">
+          <button class="btn waves-effect waves-light" type="submit" name="action">Submit
             <i class="material-icons right">send</i>
           </button>
         </div>
@@ -40,11 +69,32 @@
     </div>
   </div>
 
-  {{template "footer.tmpl.html"}}
+  {{template "components/footer.tmpl.html"}}
   <script>
     $(document).ready(function() {
       $('select').material_select();
     });
+
+    $(document).ready(function(){
+      $('ul.tabs').tabs();
+    });
+
+    let counterEvent = 1;
+    $('.scale').on('click', (e)=> {
+      if (counterEvent%2) {
+        e.target.closest('.scale').classList.toggle('active')
+      }
+      counterEvent++;
+    })
+
+    $('.tabs').on('click', (e)=> {
+      if(e.target.closest('.tabs')) {
+        $('#tumor1').find('li').eq(0).click();
+        $('#tumor2').find('li').eq(0).click();
+      }
+    })
+
+    $('#comment').trigger('autoresize');
   </script>
 </body>
 </html>
