@@ -66,6 +66,7 @@
 
     $('select').on('change', (e) => {
       e.target.closest('.select-wrapper').previousElementSibling.value = e.target.previousElementSibling.querySelector('.active span').innerHTML
+      e.target.display = none;
     })
   </script>
 </body>
