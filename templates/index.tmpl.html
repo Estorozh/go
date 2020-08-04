@@ -65,8 +65,13 @@
     $('#comment').trigger('autoresize');
 
     $('select').on('change', (e) => {
-      e.target.closest('.select-wrapper').previousElementSibling.value = e.target.previousElementSibling.querySelector('.active span').innerHTML
-      e.target.display = none;
+      // e.target.closest('.select-wrapper').previousElementSibling.value = e.target.previousElementSibling.querySelector('.active span').innerHTML
+      let wrap = e.target.closest('.input-field');
+      if (!wrap) {
+        return;
+      }
+      wrap.lastElementChild.value = e.target.previousElementSibling.querySelector('.active span').innerHTML;
+      // e.target.display = none;
     })
   </script>
 </body>
